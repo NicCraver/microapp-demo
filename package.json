@@ -1,0 +1,23 @@
+{
+  "name": "anx-chronic-disease-management-center",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "rimraf": "npm-run-all --parallel rimraf:*",
+    "bootstrap": "yarn && npm-run-all --serial yarn:*",
+    "yarn:main": "cd main && yarn",
+    "yarn:microapp-template": "cd packages/microapp-template && yarn",
+    "yarn:microapp-template2": "cd packages/microapp-template2 && yarn",
+    "dev:main": "cd main && yarn dev",
+    "dev:microapp-template": "cd packages/microapp-template && yarn dev",
+    "dev:microapp-template2": "cd packages/microapp-template2 && yarn dev",
+    "rimraf:node_modules": "rimraf node_modules",
+    "rimraf:main": "cd main && rimraf node_modules",
+    "rimraf:microapp-template": "cd packages/microapp-template && rimraf node_modules",
+    "rimraf:microapp-template2": "cd packages/microapp-template2 && rimraf node_modules"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
