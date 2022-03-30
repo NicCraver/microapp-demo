@@ -41,8 +41,8 @@
     </template>
     <template #menuHeaderRender>
       <router-link :to="{ path: '/' }">
-        <img src="../assets/logo.png" />
-        <h1>慢病管理平台</h1>
+        <!-- <img src="../assets/logo.png" /> -->
+        <h1>系统</h1>
       </router-link>
     </template>
     <template #menuItemRender="{ item, icon }">

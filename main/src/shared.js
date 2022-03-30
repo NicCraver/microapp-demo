@@ -2,12 +2,7 @@ import store from './store'
 
 const CONFIG = {
   store,
-  static: [
-    {
-      path: '/src/assets/logo.png',
-      content: require('../src/assets/logo.png'),
-    },
-  ],
+  static: [],
   async: [
     {
       path: './api/request.js',

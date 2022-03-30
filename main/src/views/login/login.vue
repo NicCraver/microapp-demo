@@ -31,7 +31,7 @@
                   </a-form>
                 </div>
               </div>
-              <div class="login-footer">{{ now }} 平安联想智慧医疗版权所有</div>
+              <div class="login-footer">{{ now }}</div>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ const onSubmit = () => {
     })
 }
 
-const title = window.g.APP_LOGIN_TITLE || '慢病管理中心 , 登录'
+const title = window.g.APP_LOGIN_TITLE || '系统 , 登录'
 const formRef = ref()
 const loading = ref(false)
 const ruleForm = reactive({
@@ -107,48 +107,14 @@ const submitForm = (formEl) => {
 
 const onLogin = () => {
   loading.value = true
-  userLogin({
-    loginName: formState.account,
-    pwd: encryptsm3(formState.password),
-    loginType: '1',
-  })
-    .then((res) => {
-      console.log('res', res)
-      if (res.code === 0) {
-        sessionStorage.setItem('roleIds', res.result.roleIds)
-        sessionStorage.setItem('loginName', res.result.name)
-        sessionStorage.setItem('userId', res.result.userId)
-        sessionStorage.setItem('username', res.result.loginName)
-        // ElNotification({
-        //   offset: 55,
-        //   title: '成功',
-        //   message: '验证成功，即将跳转到首页',
-        //   type: 'success',
-        // })
-        //成功
-        // 获取token
-        getToken(res.result.userId).then((result) => {
-          console.log('result', result)
-          sessionStorage.setItem('token', result.result.token)
-          sessionStorage.setItem('secretKey', result.result.secretKey)
-          getApplicationData()
-        })
-      } else {
-        setTimeout(() => {
-          loading.value = false
-        }, 300)
-        // $message({
-        //   message: "用户名或密码错误",
-        //   type: "error",
-        // });
-      }
-    })
-    .catch((err) => {
-      setTimeout(() => {
-        loading.value = false
-      }, 300)
-      console.log(err)
-    })
+
+  sessionStorage.setItem('roleIds', 'res.result.roleIds')
+  sessionStorage.setItem('loginName', 'test')
+  sessionStorage.setItem('userId', 'res.result.userId')
+  sessionStorage.setItem('username', 'res.result.loginName')
+  sessionStorage.setItem('token', 'result.result.token')
+  sessionStorage.setItem('secretKey', 'result.result.secretKey')
+  getApplicationData()
 }
 function getApplicationData() {
   setTimeout(() => {
@@ -271,7 +237,7 @@ const goPage = (appName, path) => {
     left: 0;
     width: 60%;
     height: 100%;
-    background: url('../../assets/login_bg.jpeg');
+    background: #03a9f4;
     background-size: cover;
     background-position: 50% 50%;
   }
