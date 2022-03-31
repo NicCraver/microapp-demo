@@ -111,7 +111,7 @@ const loginName = computed(() => {
 const router = useRouter()
 const test = async () => {
   try {
-    await logout(sessionStorage.getItem('userId'))
+    // await logout(sessionStorage.getItem('userId'))
     sessionStorage.clear()
     router.push('/login')
     // window?.location?.reload?.()
